@@ -1,0 +1,18 @@
+version: '3'
+services:
+  pytorch-app:
+    build: .
+    volumes:
+      - .dockervenv:/src/.venv
+      - ../:/src
+    ports:
+        - 8000:8000  # ホストマシンのポート8000を、docker内のポート8000に接続する
+        - 8888:8888
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    command: jupyter-lab --no-browser --port=8888 --ip=0.0.0.0 --allow-root --NotebookApp.token=''
