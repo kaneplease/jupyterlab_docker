@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
 
 # jupyterlab用環境設定
 RUN conda install nodejs
+RUN conda update nodejs
 RUN pip install ipywidgets
 RUN jupyter nbextension enable --py widgetsnbextension
 RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager
