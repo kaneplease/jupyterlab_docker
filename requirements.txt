@@ -1,9 +1,13 @@
+# 自然言語処理
 mecab-python3
 fugashi
 ipadic
 sentence-transformers
+
+# DB
 sqlalchemy
 mysqlclient
+
 pandas
 numpy
 scikit-learn
@@ -17,6 +21,3 @@ optuna
 xgboost
 lightgbm
 seaborn
-xlrd
-openpyxl 
-optuna

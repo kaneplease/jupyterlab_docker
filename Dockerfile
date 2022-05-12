@@ -8,6 +8,10 @@ RUN apt-get update && apt-get install -y \
     libmysqlclient-dev mysql-client \
     mecab mecab-ipadic-utf8 libmecab-dev
 
+# 自然言語処理設定
+RUN pip install -U ginza ja_ginza_electra
+RUN pip install git+https://github.com/boudinfl/pke.git
+
 # jupyterlab用環境設定
 RUN conda install nodejs
 RUN conda update nodejs
